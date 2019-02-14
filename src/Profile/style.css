@@ -1,0 +1,29 @@
+.profile-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.profile-info .btn {
+  margin-left: auto;
+}
+
+.profile-shows {
+  padding: 0;
+  margin: 0 0 0 -20px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.profile-shows > li {
+  flex-basis: 50%;
+  min-width: 0;
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.profile-shows .card {
+  height: 100%;
+}
