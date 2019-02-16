@@ -29,10 +29,10 @@ export const SignInForm = compose(
     values: getFormValues(form)(state),
   })),
 )(props => {
-  const { submit, submitting, error, change, values, reset } = props
+  const { handleSubmit, submitting, error, change, values, reset } = props
   const isAdminValues = isEqual(values, initialValues)
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <Field
         label="Email"
         type="email"
@@ -61,10 +61,8 @@ export const SignInForm = compose(
 
       <div>
         <button
-          type="button"
           disabled={submitting}
           className="btn btn-primary"
-          onClick={submit}
         >
           Submit
         </button>
@@ -83,9 +81,9 @@ export const SignInForm = compose(
           className="btn btn-light ml-3"
           onClick={useAdminCredentials(change)}
         >
-          Use admin credentials
+          Admin creds
         </button>
       </div>
-    </div>
+    </form>
   )
 })
