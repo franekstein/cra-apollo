@@ -1,11 +1,12 @@
 import React from "react";
 
-import { APIStatus } from "./APIStatus";
+import './styles.css'
+import { Container } from '../Container'
 
 export const Footer = () => {
   return (
     <footer>
-      <div className="container">
+      <Container className="footer">
         <small className="text-muted">
           If UI is stuck! Check that{" "}
           <a
@@ -15,9 +16,10 @@ export const Footer = () => {
           >
             graphql API
           </a>{" "}
-          is working <APIStatus />
+          is working
         </small>
-      </div>
+        <small className="text-muted node-env"><strong>{process.env.NODE_ENV}</strong></small>
+      </Container>
     </footer>
   );
 };

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { withApollo } from 'react-apollo'
 import isFunction from 'lodash/isFunction'
 
-import './style.css'
+import './styles.css'
 import { removeToken } from '../../utils'
 import { Me } from '../Me'
 import { Container } from '../Container'

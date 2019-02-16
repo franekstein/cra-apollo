@@ -1,0 +1,9 @@
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.node-env {
+  margin-left: auto;
+  text-transform: uppercase;
+}
