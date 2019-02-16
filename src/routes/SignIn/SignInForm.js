@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import isEqual from 'lodash/isEqual'
 
 import { onSubmit } from './onSubmit'
-import { FieldInput } from '../components'
+import { FieldInput } from '../../components'
 
 const initialValues = {
   email: 'admin@email.com',
@@ -52,12 +52,6 @@ export const SignInForm = compose(
         aria-describedby="emailHelp"
         placeholder="Password"
       />
-
-      <div className="form-group">
-        <small id="passwordHelpBlock" className="form-text text-muted">
-          Try to enter email: <b>{initialValues.email}</b> and password: <b>{initialValues.password}</b>
-        </small>
-      </div>
 
       {!submitting && error && (
         <div className="alert alert-danger" role="alert">

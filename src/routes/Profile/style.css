@@ -1,0 +1,58 @@
+.profile-shows ul {
+  padding: 0;
+  margin: 0 0 0 -20px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.profile-shows ul > li {
+  min-width: 0;
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.profile-shows .card {
+  height: 100%;
+}
+
+
+.profile-shows ul > li {
+  flex-basis: 100%;
+}
+
+@media (max-width: 575.98px) {
+  .profile-shows h3 {
+    text-align: center;
+  }
+
+  .profile-shows .card {
+    max-width: 290px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 576px) {
+  .profile-shows ul > li {
+    flex-basis: 50%
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .profile-shows ul > li {
+    flex-basis: 33%
+  }
+}
+
+@media (min-width: 1200px) {
+  .profile-shows ul > li {
+    flex-basis: 25%
+  }
+}

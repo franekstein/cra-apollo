@@ -1,40 +1,28 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { ApolloProvider } from "react-apollo";
-import { Provider } from "react-redux";
-import isEmpty from 'lodash/isEmpty'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { ApolloProvider } from 'react-apollo'
+import { Provider } from 'react-redux'
+import { Router } from 'react-router-dom'
 
-import "./styles.css";
-import { client } from "./client";
-import { store } from "./store";
-import { Me } from "./Me";
-import { SignIn } from "./SignIn";
-import { Profile } from "./Profile";
-import { Footer } from "./Footer";
+import './styles.css'
+import { client } from './client'
+import { store } from './store'
+import { history } from './libs'
+import { Routes } from './routes'
 
 class App extends React.Component {
-  render() {
+  render () {
     return (
       <ApolloProvider client={client}>
         <Provider store={store}>
-          <div className="app">
-            <main className="container">
-              <Me>
-                {({ data, loading, error }) => {
-                  const isLogged = !!(data && data.me && data.me.id);
-
-                  if (!error && loading && isEmpty(data)) return 'Please wait...'
-                  return isLogged ? <Profile /> : <SignIn />;
-                }}
-              </Me>
-            </main>
-            <Footer />
-          </div>
+          <Router history={history}>
+            <Routes />
+          </Router>
         </Provider>
       </ApolloProvider>
-    );
+    )
   }
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+const rootElement = document.getElementById('root')
+ReactDOM.render(<App />, rootElement)

@@ -6,7 +6,9 @@ import "./style.css";
 export const ShowCard = ({ className, show }) => {
   return (
     <div className={cn("card", className)}>
-      <img src={show.image.medium} className="card-img-top" alt={show.name} />
+      <div className="card-img-holder">
+        <img className="card-img-top" src={show.image.medium} alt={show.name} />
+      </div>
       <div className="card-body">
         <h5 className="card-title">{show.name}</h5>
         <p

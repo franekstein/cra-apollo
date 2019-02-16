@@ -15,17 +15,23 @@
     "classnames": "2.2.6",
     "graphql": "14.1.1",
     "graphql-tag": "2.10.1",
+    "history": "^4.7.2",
     "lodash": "^4.17.11",
     "react": "16.8.0",
     "react-apollo": "2.4.1",
     "react-dom": "16.8.0",
     "react-redux": "6.0.0",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.3",
     "recompose": "0.30.0",
     "redux": "4.0.1",
     "redux-form": "8.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

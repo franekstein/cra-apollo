@@ -2,7 +2,7 @@ import React from "react";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
-import { ShowCard } from "../Show";
+import { ShowCard } from "../../components";
 
 const SHOW = gql`
   query Show($id: ID!) {

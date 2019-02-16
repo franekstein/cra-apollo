@@ -1,4 +1,5 @@
 import { SubmissionError } from 'redux-form'
+import { ERROR } from '../../constants'
 
 const t10n = {
   email: {
@@ -20,7 +21,7 @@ export const onSubmit = (values, _, props) => {
 
     if (graphQLErrors) {
       // params validation errors
-      const paramsError = graphQLErrors.find(e => e.name === 'InvalidParams')
+      const paramsError = graphQLErrors.find(e => e.name === ERROR.PARAMS_ERROR)
       if (paramsError) {
         const { data } = paramsError
         errors = Object.keys(data).reduce((acc, key) => ({ ...acc, [key]: t10n[key][data[key]] || data[key] }), {})
@@ -31,7 +32,7 @@ export const onSubmit = (values, _, props) => {
       }
 
       // schema errors
-      const internalError = graphQLErrors.find(e => (e.extensions || {}).code === "INTERNAL_SERVER_ERROR")
+      const internalError = graphQLErrors.find(e => (e.extensions || {}).code === ERROR.INTERNAL_SERVER_ERROR)
       if (internalError) {
         throw new SubmissionError({ _error: '🤷 Oops. You should provide credentials!' })
       }
