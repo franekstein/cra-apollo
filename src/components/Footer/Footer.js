@@ -2,6 +2,7 @@ import React from 'react'
 import cn from 'classnames'
 
 import css from './styles.module.css'
+import { config } from '../../config'
 import { Container } from '../Container'
 
 export const Footer = () => {
@@ -11,7 +12,7 @@ export const Footer = () => {
         <small className="text-muted">
           If UI is stuck! Check that{' '}
           <a
-            href={process.env.REACT_APP_GRAPHQL_API}
+            href={config.URI}
             target="_blank"
             rel="noopener noreferrer"
           >
