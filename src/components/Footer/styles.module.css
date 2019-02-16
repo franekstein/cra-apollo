@@ -1,9 +1,15 @@
 .footer {
+  background: lightgray;
+  padding: 10px 0;
+  flex: 0 0 auto;
+}
+
+.container {
   display: flex;
   align-items: center;
 }
 
-.node-env {
+.nodeEnv {
   margin-left: auto;
   text-transform: uppercase;
 }

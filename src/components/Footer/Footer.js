@@ -1,25 +1,26 @@
-import React from "react";
+import React from 'react'
+import cn from 'classnames'
 
-import './styles.css'
+import css from './styles.module.css'
 import { Container } from '../Container'
 
 export const Footer = () => {
   return (
-    <footer>
-      <Container className="footer">
+    <footer className={css.footer}>
+      <Container className={css.container}>
         <small className="text-muted">
-          If UI is stuck! Check that{" "}
+          If UI is stuck! Check that{' '}
           <a
-            href="https://movies-graphql-server.glitch.me/"
+            href={process.env.REACT_APP_GRAPHQL_API}
             target="_blank"
             rel="noopener noreferrer"
           >
-            graphql API
-          </a>{" "}
-          is working
+            API
+          </a>{' '}
+          works
         </small>
-        <small className="text-muted node-env"><strong>{process.env.NODE_ENV}</strong></small>
+        <small className={cn('text-muted', css.nodeEnv)}><strong>{process.env.NODE_ENV}</strong></small>
       </Container>
     </footer>
-  );
-};
+  )
+}

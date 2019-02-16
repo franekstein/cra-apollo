@@ -7,10 +7,10 @@ import { setContext } from 'apollo-link-context'
 import { onError } from 'apollo-link-error'
 
 import { getToken, removeToken } from './utils'
-import { config } from './config'
 
+const URI = process.env.REACT_APP_GRAPHQL_API
 const persistedLink = createPersistedQueryLink();
-const batchLink = new BatchHttpLink({ uri: config.API_URL });
+const batchLink = new BatchHttpLink({ uri: URI });
 const authLink = setContext((req, previousContext) => {
   const token = getToken();
   const headers = previousContext.headers

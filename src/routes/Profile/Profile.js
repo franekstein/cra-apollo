@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 import { Container, Footer, Header } from '../../components'
 import { LikedShow } from './LikedShow'
 
-import './style.css'
+import './styles.module.css'
 
 const showIds = new Array(8).fill(0).map((_, i) => i + 1)
 

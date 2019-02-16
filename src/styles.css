@@ -6,9 +6,6 @@ body,
 
 #root {
   min-width: 320px;
-}
-
-.app {
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -17,10 +14,4 @@ body,
 main {
   padding: 20px 0;
   flex: 1;
-}
-
-footer {
-  background: lightgray;
-  padding: 10px 0;
-  flex: 0 0 auto;
 }
