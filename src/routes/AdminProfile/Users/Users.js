@@ -35,8 +35,8 @@ export const Users = () => {
               if (!isEmpty(data)) {
                 const { users } = data
                 return (
-                  <div>
-                    <table className="table table-bordered">
+                  <div className="table-responsive">
+                    <table className="table table-bordered table-striped">
                       <thead className="thead-dark">
                       <tr>
                         <th scope="col">ID</th>
@@ -49,7 +49,9 @@ export const Users = () => {
                       <tbody>
                       {users.map((user) => (
                         <tr key={user.id}>
-                          <th scope="row">{user.id}</th>
+                          <th scope="row">
+                            <small>{user.id}</small>
+                          </th>
                           <td>{user.name}</td>
                           <td>{user.isAdmin && String(user.isAdmin)}</td>
                           <td>{!user.isAdmin && String(user.isBanned)}</td>
