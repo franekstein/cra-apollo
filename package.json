@@ -12,6 +12,7 @@
     "apollo-link-context": "1.0.14",
     "apollo-link-error": "1.1.7",
     "apollo-link-persisted-queries": "0.2.2",
+    "apollo-link-ws": "^1.0.14",
     "classnames": "2.2.6",
     "graphql": "14.1.1",
     "graphql-tag": "2.10.1",
@@ -25,7 +26,9 @@
     "react-scripts": "2.0.3",
     "recompose": "0.30.0",
     "redux": "4.0.1",
-    "redux-form": "8.1.0"
+    "redux-form": "8.1.0",
+    "subscriptions-transport-ws": "^0.9.15",
+    "apollo-utilities": "latest"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.2.0",

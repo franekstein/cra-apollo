@@ -8,14 +8,24 @@ import isEqual from 'lodash/isEqual'
 import { onSubmit } from './onSubmit'
 import { FieldInput } from '../../components'
 
-const initialValues = {
+const adminCredentials = {
   email: 'admin@email.com',
   password: '1234567890',
 }
 
 const useAdminCredentials = (change) => () => {
-  change('email', initialValues.email)
-  change('password', initialValues.password)
+  change('email', adminCredentials.email)
+  change('password', adminCredentials.password)
+}
+
+const userCredentials = {
+  email: 'user@email.com',
+  password: '1234567890',
+}
+
+const useUserCredentials = (change) => () => {
+  change('email', userCredentials.email)
+  change('password', userCredentials.password)
 }
 
 export const SignInForm = compose(
@@ -30,7 +40,8 @@ export const SignInForm = compose(
   })),
 )(props => {
   const { handleSubmit, submitting, error, change, values, reset } = props
-  const isAdminValues = isEqual(values, initialValues)
+  const isAdminCredentials = isEqual(values, adminCredentials)
+  const isUserCredentials = isEqual(values, userCredentials)
   return (
     <form onSubmit={handleSubmit}>
       <Field
@@ -75,14 +86,25 @@ export const SignInForm = compose(
           Reset
         </button>
 
-        <button
-          type="button"
-          disabled={isAdminValues}
-          className="btn btn-light ml-3"
-          onClick={useAdminCredentials(change)}
-        >
-          Admin creds
-        </button>
+        <div className="mt-5">
+          <h6>Or you can use one of this credentials</h6>
+          <button
+            type="button"
+            disabled={isAdminCredentials}
+            className="btn btn-warning"
+            onClick={useAdminCredentials(change)}
+          >
+            Admin
+          </button>
+          <button
+            type="button"
+            disabled={isUserCredentials}
+            className="btn btn-info ml-3"
+            onClick={useUserCredentials(change)}
+          >
+            User
+          </button>
+        </div>
       </div>
     </form>
   )
